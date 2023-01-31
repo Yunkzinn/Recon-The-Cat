@@ -11,16 +11,16 @@ Choose a Module :
 def getOption(option):
 
     if option == 1:
-        return os.system(f"python scripts/enum.py")
+        return os.system(f"python3 scripts/enum.py")
 
     elif option == 2:
         return os.system(f"bash scripts/complement.sh")
 
     elif option == 3:
-        return os.system(f"python scripts/endpoints.py")
+        return os.system(f"python3 scripts/endpoints.py")
 
     elif option == 4:
-        return os.system(f"python scripts/ips.py")
+        return os.system(f"python3 scripts/ips.py")
 
 try:
     option = int(input(message)) 
