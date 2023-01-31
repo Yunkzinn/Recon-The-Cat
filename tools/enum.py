@@ -11,7 +11,7 @@ subfile = f"{domain.split('.')[0]}_subs.txt"
 httpx = f"{domain.split('.')[0]}_httpx.txt"
 httpx200 = f"{domain.split('.')[0]}_200httpx.txt"
 awkHttpx = f"{domain.split('.')[0]}_awkhttpx.txt"
-apiGitHub = "github_pat_AOMJNII04prEmFWLtL3H_SXWrrdWW0K967THW7IMNBfqse5LDDcPXkJ0zocer5JL2TD6QLRMDVBUQgqu"
+apiGitHub = "YOUR_API_KEY_GITHUB"
 
 
 
