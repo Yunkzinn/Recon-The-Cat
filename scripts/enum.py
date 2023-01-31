@@ -1,6 +1,7 @@
 import os
 
 domain = input("Domain to Search: ")
+
 haktrails = f"{domain.split('.')[0]}_haktrails.txt"
 assetfinder = f"{domain.split('.')[0]}_assetfinder.txt"
 subfinder = f"{domain.split('.')[0]}_subfinder.txt"
