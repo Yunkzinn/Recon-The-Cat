@@ -24,6 +24,7 @@ message =  ('''
     3) Endpoints Enum
     4) Subs Takeover
     5) Enum Files and JS
+    6) JS Analysis
 ''')
 
 def getOption(option):
@@ -42,10 +43,13 @@ def getOption(option):
 
     elif option == 5:
         return os.system(f"python3 scripts/js.py")
+    
+    elif option == 6:
+        return os.system(f"python3 scripts/jsAnalysis.py")
 
 try:
     option = int(input(message)) 
-    if not 0 < option < 6:
+    if not 0 < option < 7:
         raise ValueError    
     print(getOption(option))
 
