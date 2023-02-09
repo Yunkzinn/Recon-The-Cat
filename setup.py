@@ -5,7 +5,7 @@ Choose a Module :
 1) Subdomains Enum
 2) Complement Subs Enum
 3) Endpoints Enum
-4) Ips Enum
+4) Subs Takeover
 ''')
 
 def getOption(option):
@@ -20,7 +20,7 @@ def getOption(option):
         return os.system(f"python3 scripts/endpoints.py")
 
     elif option == 4:
-        return os.system(f"python3 scripts/ips.py")
+        return os.system(f"python3 scripts/takeover.py")
 
 try:
     option = int(input(message)) 
@@ -32,5 +32,4 @@ except:
     print("Choose a Valid Option")
 
 #Future Updates:    
-#Add option use without haktrails
 #All in one archive
