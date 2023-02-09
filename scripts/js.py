@@ -23,7 +23,7 @@ os.system(f"{httpx200} | xargs -I% -P10 sh -c 'hakrawler -plain -linkfinder -dep
 os.system(f"{httpx200} | rush -j 100 'hakrawler -js -plain -usewayback -depth 6 -scope subs -url {{}} | unew h {hakrawler2}'")
 os.system(f"{httpx200} | xargs -I@ sh -c 'python3 dirsearch.py -r -b -w path -u @ -i 200, 403, 401, 302 -e json,js,jsp' | tee {dirsearch}")
 os.system(f"cat {getJS} {katana} {gau} {waybackurls1} {waybackurls2} {gospider} {hakrawler1} {hakrawler2} {dirsearch} | sort -u {allJS}")
-os.system(f"cat {allJS} | httpx -silent -no-color -mc 200 | anew {js200}")
+os.system(f"cat {allJS} | anti-burl | anew {js200}")
 os.system(f"rm -rf {getJS} {katana} {gau} {waybackurls1} {waybackurls2} {gospider} {hakrawler1} {hakrawler2} {dirsearch}")
 
 
