@@ -11,7 +11,10 @@ hakrawler1 = f"hakrawler1"
 hakrawler2 = f"hakrawler2"
 dirsearch = f"dirsearch"
 allJS = f"allJS"
+justJS = f"justJS"
 js200 = f"js200"
+aliveJustJS = f"aliveJustJS"
+
 
 os.system(f"{httpx200} | getJS --complete | anew {getJS}")
 os.system(f"{httpx200} | katana -d 10 -silent -em js,jsp,json -o {katana}")
@@ -23,7 +26,9 @@ os.system(f"{httpx200} | xargs -I% -P10 sh -c 'hakrawler -plain -linkfinder -dep
 os.system(f"{httpx200} | rush -j 100 'hakrawler -js -plain -usewayback -depth 6 -scope subs -url {{}} | unew h {hakrawler2}'")
 os.system(f"{httpx200} | xargs -I@ sh -c 'python3 dirsearch.py -r -b -w path -u @ -i 200, 403, 401, 302 -e json,js,jsp' | tee {dirsearch}")
 os.system(f"cat {getJS} {katana} {gau} {waybackurls1} {waybackurls2} {gospider} {hakrawler1} {hakrawler2} {dirsearch} | sort -u {allJS}")
+os.system(f"cat {getJS} {katana} {gau} {waybackurls1} {waybackurls2} {gospider} {hakrawler1} {hakrawler2} {dirsearch} | grep -E '\.js(?:onp?)?$' | sort -u {justJS}")
 os.system(f"cat {allJS} | anti-burl | anew {js200}")
+os.system(f"cat {justJS} | anti-burl | anew {aliveJustJS}")
 os.system(f"rm -rf {getJS} {katana} {gau} {waybackurls1} {waybackurls2} {gospider} {hakrawler1} {hakrawler2} {dirsearch}")
 
 
