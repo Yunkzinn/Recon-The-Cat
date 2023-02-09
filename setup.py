@@ -1,11 +1,28 @@
 import os
 
+ascii = ('''
+     _____                        _______ _             _____      _   
+    |  __ \                      |__   __| |           / ____|    | |  
+    | |__) |___  ___ ___  _ __      | |  | |__   ___  | |     __ _| |_ 
+    |  _  // _ \/ __/ _ \| '_ \     | |  | '_ \ / _ \ | |    / _` | __|
+    | | \ \  __/ (_| (_) | | | |    | |  | | | |  __/ | |___| (_| | |_ 
+    |_|  \_\___|\___\___/|_| |_|    |_|  |_| |_|\___|  \_____\__,_|\__|
+''')                                                                    
+
+print(ascii)                                                                    
+
+github = ('''
+    Made by https://github.com/Yunkzinn with ❤️
+''')
+
+print(github)
+
 message =  ('''
-Choose a Module :
-1) Subdomains Enum
-2) Complement Subs Enum
-3) Endpoints Enum
-4) Subs Takeover
+    Choose a Module :
+    1) Subdomains Enum
+    2) Complement Subs Enum
+    3) Endpoints Enum
+    4) Subs Takeover
 ''')
 
 def getOption(option):
@@ -25,11 +42,11 @@ def getOption(option):
 try:
     option = int(input(message)) 
     if not 0 < option < 5:
-        raise ValueError
+        raise ValueError    
     print(getOption(option))
 
 except:
-    print("Choose a Valid Option")
+    print("    Choose a Valid Option")
 
 #Future Updates:    
 #All in one archive
