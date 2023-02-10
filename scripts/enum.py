@@ -10,7 +10,7 @@ amass2 = f"{domain.split('.')[0]}_amass2"
 chaos = f"{domain.split('.')[0]}_chaos"
 githubHttpx = f"{domain.split('.')[0]}_githubHttpx"
 subfile = f"{domain.split('.')[0]}_subs"
-dnsgen = f"{domain.split('.')[0]}_dnsgen"
+#dnsgen = f"{domain.split('.')[0]}_dnsgen"
 allSubs = f"{domain.split('.')[0]}_allSubs"
 httpx = f"{domain.split('.')[0]}_httpx"
 httpx200 = f"{domain.split('.')[0]}_200httpx"
@@ -27,8 +27,8 @@ os.system(f"amass enum -norecursive -brute -d {domain} -o {amass2}")
 os.system(f"chaos -d {domain} -silent -o {chaos}")
 os.system(f"python3 ~/Tools/github-search/github-subdomains.py -t {apiGitHub} -d {domain} | httpx --title >> {githubHttpx}")
 os.system(f"cat {haktrails} {assetfinder} {subfinder} {amass} {amass2} {chaos} {githubHttpx} | anew {subfile}")
-os.system(f"cat {subfile} | dnsgen - | httpx -silent -no-color -p {allports} -o {dnsgen}")
-os.system(f"cat {subfile} {dnsgen} | anew {allSubs}")
-os.system(f"cat {allSubs} | httpx -silent -no-color -p {allports} -o {httpx}")
-os.system(f"cat {allSubs} | httpx -status-code -mc 200 -silent -no-color | tr -d '[]' | tee {httpx200}; cat {httpx200} | awk '{{print $1}}' >> {awkHttpx}; rm -rf {httpx200}; mv {awkHttpx} {httpx200}")
-os.system(f"rm -rf {haktrails} {assetfinder} {subfinder} {amass} {amass2} {chaos} {githubHttpx} {dnsgen} {subfile}")
+#os.system(f"cat {subfile} | dnsgen - | httpx -silent -no-color -p {allports} -o {dnsgen}")
+#os.system(f"cat {subfile} {dnsgen} | anew {allSubs}")
+os.system(f"cat {subfile} | httpx -silent -no-color -p {allports} -o {httpx}")
+os.system(f"cat {subfile} | httpx -status-code -mc 200 -silent -no-color | tr -d '[]' | tee {httpx200}; cat {httpx200} | awk '{{print $1}}' >> {awkHttpx}; rm -rf {httpx200}; mv {awkHttpx} {httpx200}")
+os.system(f"rm -rf {haktrails} {assetfinder} {subfinder} {amass} {amass2} {chaos} {githubHttpx} {subfile}")
