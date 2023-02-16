@@ -30,6 +30,7 @@ os.system(f"cat {getJS} {katana} {gau} {waybackurls1} {waybackurls2} {gospider} 
 os.system(f"cat {allJS} | anti-burl | anew {js200}")
 os.system(f"cat {justJS} | anti-burl | anew {aliveJustJS}")
 os.system(f"rm -rf {getJS} {katana} {gau} {waybackurls1} {waybackurls2} {gospider} {hakrawler1} {hakrawler2} {dirsearch}")
+os.system(f"echo 'JS Module Finished' | notify ")
 
 
 

@@ -32,3 +32,4 @@ os.system(f"cat {haktrails} {assetfinder} {subfinder} {amass} {amass2} {chaos} {
 os.system(f"cat {subfile} | httpx -silent -no-color -p {allports} -o {httpx}")
 os.system(f"cat {subfile} | httpx -status-code -mc 200 -silent -no-color | tr -d '[]' | tee {httpx200}; cat {httpx200} | awk '{{print $1}}' >> {awkHttpx}; rm -rf {httpx200}; mv {awkHttpx} {httpx200}")
 os.system(f"rm -rf {haktrails} {assetfinder} {subfinder} {amass} {amass2} {chaos} {githubHttpx} {subfile}")
+os.system(f"echo 'Enum Module Finished' | notify ")
