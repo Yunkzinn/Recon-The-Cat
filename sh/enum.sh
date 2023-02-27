@@ -52,7 +52,7 @@ chaos -d $1 -silent -o chaos
 
 echo "[+]-------------------Github Subdomains-------------------[+]"
 
-python3 ~/Tools/github-search/github-subdomains.py -t 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 -d $1 | tee github
+python3 ~/Tools/github-search/github-subdomains.py -t YOUR_API_KEY_GITHUB -d $1 | tee github
 
 echo "[+]-------------------Findomain-------------------[+]"
 
