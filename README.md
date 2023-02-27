@@ -15,8 +15,7 @@
 
 ---
 
-**Recon The Cat** is made in python that integrates many tools and combine the results to take the better informations for your recon process.
-
+**Recon The Cat** is written in python and bash, integrates several tools and combines the results to get the best information for your recognition process.
 <h1 align="center">
   <img src="https://media.kasperskydaily.com/wp-content/uploads/sites/94/2019/10/24202052/puss-in-boots-EN-featured.jpg" alt="httpx" width="700px"></a>
   <br>
