@@ -46,6 +46,10 @@ echo "[+]-------------------Amass Brute-------------------[+]"
 
 amass enum -norecursive -brute -d $1 -o amass2
 
+echo "[+]-------------------Amass With Wordlist-------------------[+]"
+
+amass enum -active -d $1 -brute -w ~/wordlists/Discovery/DNS/subdomains-top1million-110000.txt -o amass3
+
 echo "[+]-------------------Chaos Brute-------------------[+]"
 
 chaos -d $1 -silent -o chaos
@@ -73,7 +77,7 @@ sed -i 1,2d knock; sed -i 1,2d knock; sed -i 1,2d knock; sed -i 1,2d knock; sed 
 
 echo "[+]-------------------Join All-------------------[+]"
 
-cat jldc certsh1  certsh2 certsh3 certsh4 bufferover rapiddns riddler virustotal archive sonar synapsint haktrails assetfinder subfinder amass1 amass2 chaos github findomain sublist3r knock | anew allSubs
+cat jldc certsh1  certsh2 certsh3 certsh4 bufferover rapiddns riddler virustotal archive sonar synapsint haktrails assetfinder subfinder amass1 amass2 amass3 chaos github findomain sublist3r knock | anew allSubs
 
 # Check subs
 
@@ -87,7 +91,13 @@ cat allSubs | httpx -status-code -mc 200 -silent -no-color | tr -d '[]' | tee ht
 
 echo "[+]-------------------Removing Files-------------------[+]"
 
-rm -rf jldc certsh1  certsh2 certsh3 certsh4 bufferover rapiddns riddler virustotal archive sonar synapsint haktrails assetfinder subfinder amass1 amass2 chaos github findomain sublist3r knock
+rm -rf jldc certsh1  certsh2 certsh3 certsh4 bufferover rapiddns riddler virustotal archive sonar synapsint haktrails assetfinder subfinder amass1 amass2 amass3 chaos github findomain sublist3r knock
+
+echo "[+]-------------------Aquatone Test-------------------[+]"
+
+#In tests
+
+cat allSubs | aquatone -ports xlarge -out aquatone
 
 echo "[+]-------------------Dnsgen List-------------------[+]"
 
@@ -118,4 +128,6 @@ cd ..
 # - Findomain
 # - Sublist3r
 # - Knockpy
+# - Dnsgen
+# - Aquatone
 
