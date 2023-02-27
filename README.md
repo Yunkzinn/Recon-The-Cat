@@ -4,6 +4,7 @@
 
 <p align="center">
 <img align="center" alt="Yunk-Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+<img align="center" alt="Yunk-Bash" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bash/bash-original.svg">
 </p>
 
 <p align="center">
